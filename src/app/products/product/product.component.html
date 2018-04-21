@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {{product.name}}
+  </div>
+  <div class="panel-body">
+    ${{product.price}}
+  </div>
+  <div class="panel-footer">
+    <button type="button" class="btn btn-danger btn-sm" (click)="decrementProductQty()">-</button>
+    <span>{{productQty}}</span>
+    <button type="button" class="btn btn-success btn-sm" (click)="incrementProductQty()">+</button>   
+  </div>
+</div>

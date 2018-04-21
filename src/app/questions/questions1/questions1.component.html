@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-lg-3 col-md-3" *ngFor="let question of Questions">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{question.question}}
+      </div>
+      <div class="panel-body">
+        <div *ngFor="let option of question.options">
+          <option1 [question]="question" [optionValue]="option"></option1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+    <button type="button" class="btn btn-success" (click)="calculateScore()">Submit</button>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+      <div class="alert alert-info">TOTAL SCORE : {{totalScore}}</div>
+  </div>
+</div>

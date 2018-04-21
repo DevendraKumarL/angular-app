@@ -1,0 +1,22 @@
+<div class="col-lg-4 col-md-4">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      Add New Clock
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="">Region</label>
+        <input type="text" class="form-control" [(ngModel)]="region" />
+      </div>
+      <div class="form-group">
+        <label for="">Minute</label>
+        <input type="number" class="form-control" [(ngModel)]="hours" />
+      </div>
+      <div class="form-group">
+        <label for="">Second</label>
+        <input type="number" class="form-control" [(ngModel)]="minutes" />
+      </div>
+      <button class="btn btn-success" type="button" (click)='addClock()'>Add</button>
+    </div>
+  </div>
+</div>

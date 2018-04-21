@@ -1,0 +1,17 @@
+<product-editing></product-editing>
+
+<div class="row">
+    <div class="col-lg-2 col-md-2" *ngFor="let product of productsService.products">
+        <product [product]="product" [(productQty)]="product.productQty"></product>
+    </div>
+
+    <div class="col-md-2 col-md-offset-5" *ngIf="productsService.isLoading">
+        <img src="/assets/loading.gif" alt="Loading...">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <button type="button" class="btn btn-warning" (click)="productsService.fetchMoreProducts()">Load More</button>
+    </div>
+</div>

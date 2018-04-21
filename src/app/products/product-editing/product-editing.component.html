@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-lg-4 col-md-4"></div>
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Add New Product
+            </div>
+            <div class="panel-body">
+                <form [formGroup]="productFormGroup" (ngSubmit)="submitProductData()">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" name="productName" class="form-control" formControlName="productName" />
+                        <div *ngIf="productFormGroup.controls.productName.invalid &&
+                            (productFormGroup.controls.productName.dirty || productFormGroup.controls.productName.touched)">
+                            <div class="alert alert-danger" *ngIf="productFormGroup.controls.productName.errors.required">
+                                Product Name is required
+                            </div>
+                            <div class="alert alert-danger" *ngIf="productFormGroup.controls.productName.errors.minlength">
+                                Product Name min length is 3 chars
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Price</label>
+                        <input type="number" name="productPrice" class="form-control" formControlName="productPrice" />
+                        <div *ngIf="productFormGroup.controls.productPrice.invalid &&
+                            (productFormGroup.controls.productPrice.dirty || productFormGroup.controls.productPrice.touched)">
+                            <div class="alert alert-danger" *ngIf="productFormGroup.controls.productPrice.errors.required">
+                                Product Price is required
+                            </div>
+                            <div class="alert alert-danger" *ngIf="productFormGroup.controls.productPrice.errors.min">
+                                Product Price minimum value is 1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Quantity</label>
+                        <input type="number" name="productQty" class="form-control" formControlName="productQty">
+                        <div *ngIf="productFormGroup.controls.productQty.invalid &&
+                            (productFormGroup.controls.productQty.dirty || productFormGroup.controls.productQty.touched)">
+                            <div class="alert alert-danger" *ngIf="productFormGroup.controls.productQty.errors.required">
+                                Product Quantity is required
+                            </div>
+                            <div class="alert alert-danger" *ngIf="productFormGroup.controls.productQty.errors.min">
+                                Product Quantity minimum value is 1
+                            </div>
+                            <div class="alert alert-danger" *ngIf="productFormGroup.controls.productQty.errors.max">
+                                Product Quantity maximum value is 1000
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-success" [disabled]="!productFormGroup.valid">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

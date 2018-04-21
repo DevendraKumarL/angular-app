@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-lg-3 col-md-3" *ngFor="let clock of clockRegionsService.clocks">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{clock.region}} &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-danger btn-sm" (click)="deleteClock(clock)">Delete</button>
+      </div>
+      <div class="panel-body">
+        <clock [clockTimezone]='clock'></clock>
+      </div>
+      <div class="panel-footer">
+        GMT Offset: {{clock.hours}} : {{clock.minutes}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <clock-form></clock-form>
+</div>
